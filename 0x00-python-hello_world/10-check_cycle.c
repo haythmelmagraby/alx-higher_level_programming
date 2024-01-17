@@ -13,9 +13,16 @@ int check_cycle(listint_t *list)
 
 	while (ls1 != NULL && ls1->next != NULL)
 	{
+		if (ls2->n == " ")
+		{
+			ls1 = ls1->next;
+			continue;
+		}
 		ls2 = ls1->next;
 		while (ls2 != NULL && ls2->next != NULL)
 		{
+			if (ls2->n == " ")
+				continue;
 			if (ls2->next == ls1->next)
 				return (1);
 			ls2 = ls2->next;
