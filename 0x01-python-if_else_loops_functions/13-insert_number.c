@@ -1,15 +1,19 @@
 #include "lists.h"
+/**
+ *insert_node- insert node in order of sorted linked list
+ *@head: linkedlist array of pointers
+ *@number: the value to be added
+ *Return: the adree if SUCCESS and NULL if faild
+ */
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *temp = *head;
 	listint_t *node;
-	while (temp != NULL && temp->next != NULL){
-	
-			printf("%d >= %d && %d < %d = %d\n",temp->n,number,(temp->next)->n,number,(temp->n <= number && (temp->next)->n > number));
 
+	while (temp != NULL && temp->next != NULL)
+	{
 		if (temp->n <= number && (temp->next)->n > number)
 		{
-			printf("i am here");
 			node = malloc(sizeof(listint_t));
 			if (node == NULL)
 				return (NULL);
