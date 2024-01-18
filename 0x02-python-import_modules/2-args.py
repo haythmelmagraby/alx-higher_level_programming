@@ -2,8 +2,12 @@
 if __name__ == "__main__":
     import sys
     args = sys.argv
-    print("{} arguments{}".format(
-        len(args) - 1, ':' if len(args) - 1 > 0 else '.'))
+    if len(args) - 1 == 0:
+        print("0 arguments.")
+    elif len(args) - 1 == 1:
+        print("1 argument:")
+    else:
+        print("{} arguments:".format(len(args)))
     for i, a in enumerate(args):
         if i == 0:
             continue
