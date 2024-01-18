@@ -2,10 +2,10 @@
 if __name__ == "__main__":
     import calculator_1 as calc
     import sys
+    if len(sys.argv) != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
     if len(sys.argv) > 2:
-        if len(sys.argv) == 4:
-            print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-            exit(1)
         a = int(sys.argv[1])
         b = int(sys.argv[3])
         op = sys.argv[2]
