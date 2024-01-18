@@ -7,12 +7,12 @@ if __name__ == "__main__":
         b = int(sys.argv[3])
         op = sys.argv[2]
         if op == "+":
-            print(calc.add(a, b))
+            print("{} {} {} = {}".format(a, op, b, calc.add(a, b)))
         elif op == "-":
-            print(calc.sub(a, b))
+            print("{} {} {} = {}".format(a, op, b, calc.sub(a, b)))
         elif op == "*":
-            print(calc.mul(a, b))
+            print("{} {} {} = {}".format(a, op, b, calc.mul(a, b)))
         elif op == "/":
-            print(calc.div(a,b))
+            print("{} {} {} = {}".format(a, op, b, calc.div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
