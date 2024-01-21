@@ -1,27 +1,39 @@
 #include "lists.h"
-#include <stdio.h>
+/**
+ *is_palindrome- check palindrome in linkedlist
+ *@head: linked list header pointer
+ *
+ *Return: 0 if not palindrome and 1 if palindrome
+ */
+
 int is_palindrome(listint_t **head)
 {
-	int counter = 0;
-	listint_t *temp = *head;
+	int counter = 0, i;
+	listint_t *temp = *head, *copy = temp;
+
 	if (*head == NULL)
-		return (1)
+		return (1);
 	while (temp)
 	{
 		counter++;
-		printf("counter : %d = %d\n",counter,temp->n);
 		temp = temp->next;
 	}
-	temp = *head;
+
+	counter--;
 	while (head)
 	{
-		while (counter >= 0)
+		if (counter == 0)
+			return (1);
+		i = 0;
+		temp = copy;
+		counter--;
+		while (i <= counter)
 		{
-			printf("*head = %d , temp[%d] = %d\n",(*head)->n,counter,temp[counter].n);
-			if ((*head)->n != temp[counter].n)
-				return (0);
-			counter --;
+			temp = temp->next;
+			i++;
 		}
+		if ((*head)->n != temp->n)
+			return (0);
 		*head = (*head)->next;
 	}
 	return (1);
