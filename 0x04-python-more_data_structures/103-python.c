@@ -30,23 +30,24 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	int i = 0, size;
+	int i = 0;
+	unsigned char size;
 	PyBytesObject *b = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
 	if (strcmp((p)->ob_type->tp_name, "bytes") != 0)
 	{
-		printf("[ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
 	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("  trying string: %s\n", b->ob_sval);
 
-	if (Py_SIZE(p) < 10)
-		size = ((PyVarObject *)p)->ob_size + 1;
+	if (((PyVarObject *)p)->ob_size > 10)
+		size = 10;
 	else
-		size = ((PyVarObject *)p)->ob_size;
+		size = ((PyVarObject *)p)->ob_size + 1;
 
 	printf("first %d bytes: ", size);
 
