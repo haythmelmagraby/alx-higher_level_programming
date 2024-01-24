@@ -7,5 +7,8 @@ def roman_to_int(roman_string):
     result = 0
     rev_roman = reversed(roman_string)
     for i in rev_roman:
-        result += roman_numbers[i]
+        if result < roman_numbers[i] * 5:
+            result += roman_numbers[i]
+        else:
+            result -= roman_numbers[i]
     return result
