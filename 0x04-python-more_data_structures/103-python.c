@@ -12,7 +12,7 @@ void print_python_list(PyObject *p)
 	int i = 0;
 	PyObject *item;
 
-	printf("[*] Size of the Python List = %ld\n", Py_SIZE(p));
+	printf("[*] Size of the Python List = %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 	while (i < Py_SIZE(p))
 	{
@@ -40,13 +40,13 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 
-	printf("  size: %ld\n", Py_SIZE(p));
+	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
 	printf("  trying string: %s\n", b->ob_sval);
 
 	if (Py_SIZE(p) < 10)
-		size = Py_SIZE(p) + 1;
+		size = ((PyVarObject *)p)->ob_size + 1;
 	else
-		size = Py_SIZE(p);
+		size = ((PyVarObject *)p)->ob_size;
 
 	printf("first %d bytes: ", size);
 
