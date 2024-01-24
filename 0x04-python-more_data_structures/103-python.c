@@ -7,7 +7,8 @@ void print_python_bytes(PyObject *p);
  *@p: python object pointer
  *
  */
-void print_python_list(PyObject *p){
+void print_python_list(PyObject *p)
+{
 	int i = 0;
 	PyObject *item;
 
@@ -18,11 +19,17 @@ void print_python_list(PyObject *p){
 		item = PyList_GET_ITEM(p, i);
 		printf("Element %d: %s\n", i, Py_TYPE(item)->tp_name);
 		i++;
-		if(strcmp(Py_TYPE(item)->tp_name, "bytes") == 0)
+		if (strcmp(Py_TYPE(item)->tp_name, "bytes") == 0)
 			print_python_bytes(item);
 	}
 }
-void print_python_bytes(PyObject *p){
+/**
+ *print_python_bytes- print first 10 bytes python object
+ *@p: python object pointer
+ *
+ */
+void print_python_bytes(PyObject *p)
+{
 	int i = 0, size;
 	PyBytesObject *b = (PyBytesObject *)p;
 
@@ -33,10 +40,10 @@ void print_python_bytes(PyObject *p){
 		return;
 	}
 
-	printf("  size: %ld\n",Py_SIZE(p));
-	printf("  trying string: %s\n",b->ob_sval);
+	printf("  size: %ld\n", Py_SIZE(p));
+	printf("  trying string: %s\n", b->ob_sval);
 
-	if (Py_SIZE(p) < 10 )
+	if (Py_SIZE(p) < 10)
 		size = Py_SIZE(p) + 1;
 	else
 		size = Py_SIZE(p);
@@ -45,7 +52,7 @@ void print_python_bytes(PyObject *p){
 
 	while (i < size)
 	{
-		printf("%02hhx",b->ob_sval[i]);
+		printf("%02hhx", b->ob_sval[i]);
 		if (i != size - 1)
 			printf(" ");
 		else
