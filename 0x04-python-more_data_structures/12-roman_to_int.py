@@ -7,7 +7,9 @@ def roman_to_int(roman_string):
     result = 0
     rev_roman = reversed(roman_string)
     for i in rev_roman:
-        if result < roman_numbers[i] * 2:
+        if result > 3999 or result < 0:
+            break
+        if result < roman_numbers[i] * 4:
             result += roman_numbers[i]
         else:
             result -= roman_numbers[i]
