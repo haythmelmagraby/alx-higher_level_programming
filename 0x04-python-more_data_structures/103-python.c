@@ -32,7 +32,7 @@ void print_python_list(PyObject *p)
 void print_python_bytes(PyObject *p)
 {
 	int i = 0;
-	unsigned char size;
+	int size;
 	PyBytesObject *b = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
