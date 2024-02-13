@@ -1,0 +1,26 @@
+import function from module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test intiger and default:
+	>>> add_integer(0)
+	98
+
+Test integer:
+	>>> add_integer(1)
+	99
+
+Test tow:
+        >>> add_integer(5,5)
+        10
+
+Test big int:
+        >>> add_integer(999999996,999999999)
+        1999999995
+
+Test float:
+        >>> add_integer(2.75)
+        100
+
+Test negative:
+        >>> add_integer(-2.75)
+        96
