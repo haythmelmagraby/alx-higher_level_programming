@@ -63,18 +63,18 @@ class Rectangle:
         return result
 
     def __repr__(self):
-    """ Rectangle Class"""
+    """ reper return result"""
         result = "Rectangle({:d}, {:d})".format(self.__width, self.__height)
         return result
 
     def __del__(self):
-    """ Rectangle Class"""
+    """ delete instance """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-    """ Rectangle Class"""
+    """ rect begger or equal """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
@@ -85,7 +85,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        ''' Class method
+        '''square
         Args:
             size: size of the square.
         '''
