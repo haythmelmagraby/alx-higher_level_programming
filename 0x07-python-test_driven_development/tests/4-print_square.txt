@@ -1,0 +1,13 @@
+import function from module:
+        >>> print_square = __import__('4-print_square').print_square
+
+Test print (0):
+        >>> print_square(0)
+
+Test print (1):
+        >>> print_square(1)
+	#
+Test print (2):
+        >>> print_square(2)
+	##
+	##
