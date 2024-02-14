@@ -1,0 +1,22 @@
+import function from module:
+        >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test matrix elemnt:
+        >>> matrix_divided([[4]],4)
+        1.0
+
+Test matrix:
+        >>> matrix_divided([[1, 2, 3], [2, 4, 8]],2)
+        [[0.5, 1.0, 1.5],[1.0, 2.0, 4.0]]
+
+Test matrix 2:
+	>>> lists = [[[1, 2, 3], [2, 4, 8]]]
+        >>> matrix_divided(lists,2)
+        [[0.5, 1.0, 1.5],[1.0, 2.0, 4.0]]
+	>>> lists[1][2]
+	8
+
+Test matrix negative:
+        >>> matrix_divided([[1, 2, 3], [2, 4, 8]],-3)
+        [[-0.33, -0.67, -1.01],[-0.67, -1.33, -2.67]]
+
