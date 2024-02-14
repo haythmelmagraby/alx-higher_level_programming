@@ -1,0 +1,22 @@
+import function from module:
+        >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test say_my_name:
+        >>> say_my_name("test","test 2")
+        My name is test test2
+
+Test say_my_name first name:
+        >>> say_my_name("test")
+        My name is test
+
+Test say_my_name first name and empty last:
+        >>> say_my_name("test","")
+        My name is test
+
+Test say_my_name empty:
+        >>> say_my_name("", "")
+        My name is 
+
+Test say_my_name spaces:
+        >>> say_my_name(" ", " ")
+        My name is  
