@@ -1,0 +1,129 @@
+import function from module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test empty string:
+    >>> text_indentation("")
+
+Test another empty string :
+    >>> text_indentation("      ")
+
+Test s:
+    >>> text_indentation("Hello: Holberton")
+    Hello:
+    <BLANKLINE>
+    Holberton
+
+Test delims spaces:
+    >>> text_indentation("      ?:  :  ")
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test blan:
+    >>> text_indentation("Hello Holberton")
+    Hello Holberton
+
+Test string 1 space:
+    >>> text_indentation("Holberton	")
+    Holberton
+
+Test string 2 space:
+    >>> text_indentation("	Holberton")
+    Holberton
+    
+Test string 3 space:
+    >>> text_indentation("        Holberton          ")
+    Holberton
+    
+Test nl:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test double nl:
+    >>> text_indentation("\n\n")
+    <BLANKLINE>
+    <BLANKLINE>
+
+Test double nl with data:
+    >>> text_indentation("Hello\n\n")
+    Hello
+    <BLANKLINE>
+
+Test d:
+    >>> text_indentation("Hello: Holberton? school. fooo")
+    Hello:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    school.
+    <BLANKLINE>
+    fooo
+
+Test all d space:
+    >>> text_indentation("Hello   :     Holberton    ?    school.    fooo")
+    Hello:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    school.
+    <BLANKLINE>
+    fooo
+
+Test all d suffix:
+    >>> text_indentation("Hello   :     Holberton    ?    school.    fooo     ")
+    Hello:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    school.
+    <BLANKLINE>
+    fooo
+
+Test blan d:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test single d with space:
+    >>> text_indentation("     ?   ")
+    ?
+    <BLANKLINE>
+
+Test prefix d:
+    >>> text_indentation("?Hello.")
+    ?
+    <BLANKLINE>
+    Hello.
+    <BLANKLINE>
+
+Test d with nl:
+    >>> text_indentation("?\n\n.\n\n:")
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test None Value:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test n:
+    >>> text_indentation(30)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
