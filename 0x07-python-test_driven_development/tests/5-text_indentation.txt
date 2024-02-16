@@ -123,7 +123,7 @@ Test None Value:
     TypeError: text must be a string
 
 Test n:
-    >>> text_indentation(30)
+    >>> text_indentation(33)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
