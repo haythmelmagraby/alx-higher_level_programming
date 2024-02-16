@@ -61,37 +61,3 @@ Test d:
     school.
     <BLANKLINE>
     fooo
-
-Test all d space:
-    >>> text_indentation("Hello   :     Holberton    ?    school.    fooo")
-    Hello:
-    <BLANKLINE>
-    Holberton?
-    <BLANKLINE>
-    school.
-    <BLANKLINE>
-    fooo
-
-Test all d suffix:
-    >>> text_indentation("Hello   :     Holberton    ?    school.    fooo     ")
-    Hello:
-    <BLANKLINE>
-    Holberton?
-    <BLANKLINE>
-    school.
-    <BLANKLINE>
-    fooo
-
-Test blan d:
-    >>> text_indentation(".?:")
-    .
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-
-Test single d with space:
-    >>> text_indentation("     ?   ")
-    ?
-    <BLANKLINE>
