@@ -8,35 +8,35 @@ Test another empty string :
     >>> text_indentation("      ")
 
 Test s:
-    >>> text_indentation("Hello: Holberton")
-    Hello:
+    >>> text_indentation("Hi: Haythm")
+    Hi:
     <BLANKLINE>
-    Holberton
+    Haythm
 
 Test delims spaces:
-    >>> text_indentation("      ?:  :  ")
-    ?
-    <BLANKLINE>
+    >>> text_indentation("      :?  :  ")
     :
+    <BLANKLINE>
+    ?
     <BLANKLINE>
     :
     <BLANKLINE>
 
 Test blan:
-    >>> text_indentation("Hello Holberton")
-    Hello Holberton
+    >>> text_indentation("Hi Haythm")
+    Hi Haythm
 
 Test string 1 space:
-    >>> text_indentation("Holberton	")
-    Holberton
+    >>> text_indentation("Haythm	")
+    Haythm
 
 Test string 2 space:
-    >>> text_indentation("	Holberton")
-    Holberton
+    >>> text_indentation("	Haythm")
+    Haythm
     
 Test string 3 space:
-    >>> text_indentation("        Holberton          ")
-    Holberton
+    >>> text_indentation("        Haythm          ")
+    Haythm
     
 Test nl:
     >>> text_indentation("\n")
@@ -48,16 +48,16 @@ Test double nl:
     <BLANKLINE>
 
 Test double nl with data:
-    >>> text_indentation("Hello\n\n")
-    Hello
+    >>> text_indentation("Haythm\n\n")
+    Haythm
     <BLANKLINE>
 
 Test d:
-    >>> text_indentation("Hello: Holberton? school. fooo")
-    Hello:
+    >>> text_indentation("Hi: Haythm? by. chance")
+    Hi:
     <BLANKLINE>
-    Holberton?
+    Haythm?
     <BLANKLINE>
-    school.
+    by.
     <BLANKLINE>
-    fooo
+    chance
