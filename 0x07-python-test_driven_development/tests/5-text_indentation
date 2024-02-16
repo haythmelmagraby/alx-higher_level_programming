@@ -95,3 +95,35 @@ Test single d with space:
     >>> text_indentation("     ?   ")
     ?
     <BLANKLINE>
+
+Test prefix d:
+    >>> text_indentation("?Hello.")
+    ?
+    <BLANKLINE>
+    Hello.
+    <BLANKLINE>
+
+Test d with nl:
+    >>> text_indentation("?\n\n.\n\n:")
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test None Value:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test n:
+    >>> text_indentation(30)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string

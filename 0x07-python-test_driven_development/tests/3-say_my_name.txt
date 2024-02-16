@@ -3,7 +3,7 @@ import function from module:
 
 Test say_my_name:
         >>> say_my_name("test","test 2")
-        My name is test test2
+        My name is test test 2
 
 Test say_my_name first name:
         >>> say_my_name("test")
