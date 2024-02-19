@@ -1,0 +1,12 @@
+import function from module:
+        >>> MyList = __import__('1-my_list').MyList
+
+Test correct typing:
+        >>> my_list = MyList()
+        >>> type(my_list) == MyList
+	True
+
+Test correct inhirit:
+        >>> my_list = MyList()
+        >>> isinstance(my_list, list)
+        True
