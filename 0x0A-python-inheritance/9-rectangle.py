@@ -16,6 +16,6 @@ class Rectangle(BaseGeometry):
         '''area implementation'''
         return self.__height * self.__width
 
-    def __str(self):
+    def __str__(self):
         '''string impelementation '''
         return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
