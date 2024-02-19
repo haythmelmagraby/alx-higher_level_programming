@@ -15,6 +15,6 @@ class Square(Rectangle):
         '''calc Square area'''
         return self.__size ** 2
 
-    def __str(self):
+    def __str__(self):
         '''string impelementation '''
         return ["[Square] " + str(self.__size) + "/" + str(self.__size)]
