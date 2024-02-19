@@ -7,7 +7,6 @@ class MyInt(int):
     def __new__(cls, *args, **keywordsargs):
         '''instance from parent class'''
         return super(MyInt, cls).__new__(cls, *args, **keywordsargs)
-        
 
     def __eq__(self, another):
         '''reverse equale'''
