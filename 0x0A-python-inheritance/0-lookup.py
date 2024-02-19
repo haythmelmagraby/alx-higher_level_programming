@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lookup module """
+'''Module Lookup module '''
 
 
 def lookup(obj):
