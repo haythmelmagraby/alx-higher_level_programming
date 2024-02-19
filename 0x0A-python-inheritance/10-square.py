@@ -4,7 +4,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    ''' Square is subclass to BaseGeometry'''
+    ''' Square is subclass to Rectangle'''
 
     def __init__(self, size):
         '''Square constructor'''
