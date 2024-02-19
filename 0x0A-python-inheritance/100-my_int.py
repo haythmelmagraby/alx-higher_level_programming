@@ -4,9 +4,9 @@
 
 class MyInt(int):
     '''MyInt  rebel Class'''
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls, *args, **keywordsargs):
         '''instance from parent class'''
-        return super(MyInt, cls).__new__(cls, *args, **kwargs)
+        return super(MyInt, cls).__new__(cls, *args, **keywordsargs)
         
 
     def __eq__(self, another):
