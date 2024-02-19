@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Module check the same '''
+'''Module is_same_class'''
 
 
 def is_same_class(obj, a_class):
