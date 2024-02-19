@@ -2,11 +2,11 @@ import function from module:
         >>> MyList = __import__('1-my_list').MyList
 
 Test correct typing:
-        >>> my_list = MyList()
-        >>> type(my_list) == MyList
+        >>> ls = MyList()
+        >>> type(ls) == MyList
 	True
 
 Test correct inhirit:
-        >>> my_list = MyList()
-        >>> isinstance(my_list, list)
+        >>> ls = MyList()
+        >>> isinstance(ls, list)
         True
