@@ -14,7 +14,7 @@ class Student:
         ''' return json dictionary '''
         try:
             for i in attrs:
-                if type(i) not str:
+                if type(i) is not str:
                     return self.__dict__
         except Exception:
             return self.__dict__
