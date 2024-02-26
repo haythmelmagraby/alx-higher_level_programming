@@ -110,4 +110,3 @@ class Rectangle(Base):
         '''Rectangle instance to dictionary'''
         return {"x": self.__x, "width": self.__width, "id": self.id,
                 "height": self.__height, "y": self.__y}
-
