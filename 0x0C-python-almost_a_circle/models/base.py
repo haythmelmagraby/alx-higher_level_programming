@@ -8,6 +8,7 @@ from os import path
 class Base:
     '''Content of Base Class'''
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id is not None:
             self.id = id
@@ -27,9 +28,10 @@ class Base:
     def save_to_file(cls, list_objs):
         '''JSON string to file'''
         if list_objs is not None:
-            list_objs = [ i.to_dictionary_rearrange() for i in list_objs ]
-        
-        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as my_file:
+            list_objs = [i.to_dictionary_rearrange() for i in list_objs]
+
+        with open("{}.json".format(cls.__name__),
+                  "w", encoding="utf-8") as my_file:
             my_file.write(cls.to_json_string(list_objs))
 
     @staticmethod
@@ -48,7 +50,7 @@ class Base:
         if cls is Square:
             ins = Square(1)
         elif cls is Rectangle:
-            ins = Reactangle(1, 1)
+            ins = Rectangle(1, 1)
         else:
             ins = None
 
@@ -61,6 +63,7 @@ class Base:
         file = "{}.json".format(cls.__name__)
         if path.isfile(file):
             with open(file, "r", encoding="utf-8") as my_file:
-                return [cls.create(**i) for i in cls.from_json_string(my_file.read())]
+                return [cls.create(**i) for i in
+                        cls.from_json_string(my_file.read())]
         else:
             return []

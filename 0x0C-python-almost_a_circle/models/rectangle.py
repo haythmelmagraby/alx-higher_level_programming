@@ -79,9 +79,9 @@ class Rectangle(Base):
     def __str__(self):
         '''rectangle informations'''
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
-                                              self.id, self.x,
-                                              self.y, self.width,
-                                              self.height)
+                                                self.id, self.x,
+                                                self.y, self.width,
+                                                self.height)
 
     def __param_update(self, id=None, width=None, height=None, x=None, y=None):
         '''private update parameters'''
@@ -106,10 +106,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '''Rectangle instance to dictionary'''
-        return {"x" : self.__x, "width" : self.__width, "id" : self.id,
-                "height" : self.__height, "y" : self.__y}
+        return {"x": self.__x, "width": self.__width, "id": self.id,
+                "height": self.__height, "y": self.__y}
 
     def to_dictionary_rearrange(self):
         '''Rectangle instance to dictionary'''
-        return { "y" : self.__y, "x" : self.__x, "width" : self.__width, "id" : self.id,
-                "height" : self.__height}
+        return {"y": self.__y, "x": self.__x, "width": self.__width,
+                "id": self.id, "height": self.__height}

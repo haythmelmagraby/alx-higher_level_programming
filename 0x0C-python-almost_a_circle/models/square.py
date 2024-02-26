@@ -8,16 +8,12 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         '''the Constructor'''
         super().__init__(size, size, x, y, id)
-        self.width = size
-        self.height = size
-        self.x = x
-        self.y = y
 
     def __str__(self):
         '''rectangle informations'''
         return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
-                                              self.id, self.x,
-                                              self.y, self.width)
+                                             self.id, self.x,
+                                             self.y, self.width)
 
     @property
     def size(self):
@@ -51,5 +47,5 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         '''Rectangle instance to dictionary'''
-        return {"id" : self.id, "x" : self.x,
-                "size" : self.width, "y" : self.y}
+        return {"id": self.id, "x": self.x,
+                "size": self.width, "y": self.y}
