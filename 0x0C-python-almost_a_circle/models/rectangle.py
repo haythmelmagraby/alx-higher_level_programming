@@ -111,7 +111,3 @@ class Rectangle(Base):
         return {"x": self.__x, "width": self.__width, "id": self.id,
                 "height": self.__height, "y": self.__y}
 
-    def to_dictionary_rearrange(self):
-        '''Rectangle instance to dictionary'''
-        return {"y": self.__y, "x": self.__x, "width": self.__width,
-                "id": self.id, "height": self.__height}
