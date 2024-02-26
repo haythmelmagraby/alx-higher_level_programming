@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 '''Square Moadule'''
-from models.rectangel import Rectangel
+from models.rectangle import Rectangle
 
 
-class Square(Rectangel):
+class Square(Rectangle):
     '''Content of Square Sub Class'''
-    def __init__(self, size, size, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         '''the Constructor'''
         super().__init__(size, size, x, y, id)
-        self.width = width
-        self.height = height
+        self.width = size
+        self.height = size
         self.x = x
         self.y = y
 
     def __str__(self):
         '''rectangle informations'''
-        return "[{}] () {}/{} - {}".format(type(self)__name__,
+        return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
                                               self.id, self.x,
                                               self.y, self.width)
 
@@ -44,12 +44,12 @@ class Square(Rectangel):
     def update(self, *args, **kwargs):
         '''attributes update'''
         if args:
-            self.__param_update(args)
+            self.__param_update(*args)
 
         if kwargs:
-            self.__param_update(kwargs)
+            self.__param_update(**kwargs)
 
     def to_dictionary(self):
         '''Rectangle instance to dictionary'''
-        return ["x" : self.__x, "y" : self.__y, "id" : self.id,
-                "size" : self.__width]
+        return {"id" : self.id, "x" : self.x,
+                "size" : self.width, "y" : self.y}

@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 '''Base Module'''
-import json
-import os
+from json import dumps
+from json import loads
+from os import path
 
 
 class Base:
@@ -26,7 +27,7 @@ class Base:
     def save_to_file(cls, list_objs):
         '''JSON string to file'''
         if list_objs is not None:
-            list_objs = [ i.to_dictionary() for i in list_objs ]
+            list_objs = [ i.to_dictionary_rearrange() for i in list_objs ]
         
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as my_file:
             my_file.write(cls.to_json_string(list_objs))

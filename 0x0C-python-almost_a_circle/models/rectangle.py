@@ -59,12 +59,12 @@ class Rectangle(Base):
     def setter_validation(self, name, v, iswh):
         '''setter validation'''
         if type(v) != int:
-            raise TypeError("{} must be an integer").format(name)
+            raise TypeError("{} must be an integer".format(name))
 
         if iswh and v <= 0:
-            raise ValueError("{} must be > 0").format(name)
+            raise ValueError("{} must be > 0".format(name))
         elif not iswh and v < 0:
-            raise ValueError("{} must be >= 0").format(name)
+            raise ValueError("{} must be >= 0".format(name))
 
     def area(self):
         '''calc rectangle area'''
@@ -78,7 +78,7 @@ class Rectangle(Base):
 
     def __str__(self):
         '''rectangle informations'''
-        return "[{}] () {}/{} - {}/{}".format(type(self).__name__,
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
                                               self.id, self.x,
                                               self.y, self.width,
                                               self.height)
@@ -99,12 +99,17 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         '''attributes update'''
         if args:
-            self.__param_update(args)
+            self.__param_update(*args)
 
         if kwargs:
-            self.__param_update(kwargs)
+            self.__param_update(**kwargs)
 
     def to_dictionary(self):
         '''Rectangle instance to dictionary'''
-        return {"x" : self.__x, "y" : self.__y, "id" : self.id,
-                "height" : self.__height, "width" : self.__width}
+        return {"x" : self.__x, "width" : self.__width, "id" : self.id,
+                "height" : self.__height, "y" : self.__y}
+
+    def to_dictionary_rearrange(self):
+        '''Rectangle instance to dictionary'''
+        return { "y" : self.__y, "x" : self.__x, "width" : self.__width, "id" : self.id,
+                "height" : self.__height}
