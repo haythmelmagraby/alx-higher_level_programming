@@ -78,7 +78,7 @@ class Rectangle(Base):
 
     def __str__(self):
         '''rectangle informations'''
-        return "[{}] () {}/{} - {}/{}".format(type(self)__name__,
+        return "[{}] () {}/{} - {}/{}".format(type(self).__name__,
                                               self.id, self.x,
                                               self.y, self.width,
                                               self.height)
@@ -106,5 +106,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '''Rectangle instance to dictionary'''
-        return ["x" : self.__x, "y" : self.__y, "id" : self.id,
-                "height" : self.__height, "width" : self.__width]
+        return {"x" : self.__x, "y" : self.__y, "id" : self.id,
+                "height" : self.__height, "width" : self.__width}

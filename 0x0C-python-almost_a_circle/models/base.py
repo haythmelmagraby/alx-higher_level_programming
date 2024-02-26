@@ -2,8 +2,6 @@
 '''Base Module'''
 import json
 import os
-from models.rectangle import Rectangle
-from models.square import Square
 
 
 class Base:
@@ -14,7 +12,7 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objets
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -44,6 +42,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''Dictionary to Instance'''
+        from models.rectangle import Rectangle
+        from models.square import Square
         if cls is Square:
             ins = Square(1)
         elif cls is Rectangle:
@@ -59,7 +59,7 @@ class Base:
         '''File to instances'''
         file = "{}.json".format(cls.__name__)
         if path.isfile(file):
-            with.open(file, "r", encoding="utf-8") as my_file:
+            with open(file, "r", encoding="utf-8") as my_file:
                 return [cls.create(**i) for i in cls.from_json_string(my_file.read())]
         else:
             return []
