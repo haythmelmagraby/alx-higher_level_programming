@@ -103,3 +103,8 @@ class Rectangle(Base):
 
         if kwargs:
             self.__param_update(kwargs)
+
+    def to_dictionary(self):
+        '''Rectangle instance to dictionary'''
+        return ["x" : self.__x, "y" : self.__y, "id" : self.id,
+                "height" : self.__height, "width" : self.__width]
