@@ -4,8 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    '''Content of Rectangle Sub Class'''
-
+    '''Content of Rectangle Class'''
     def __init__(self, width, height, x=0, y=0, id=None):
         '''the Constructor'''
         super().__init__(id)
@@ -19,26 +18,16 @@ class Rectangle(Base):
         '''width getter'''
         return self.__width
 
-    @property
-    def height(self):
-        '''height getter'''
-        return self.__height
-
-    @property
-    def x(self):
-        '''x getter'''
-        return self.__x
-
-    @property
-    def y(self):
-        '''y getter'''
-        return self.__y
-
     @width.setter
     def width(self, value):
         '''width setter'''
         self.setter_validation('width', value, True)
         self.__width = value
+
+    @property
+    def height(self):
+        '''height getter'''
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -46,11 +35,21 @@ class Rectangle(Base):
         self.setter_validation('height', value, True)
         self.__height = value
 
+    @property
+    def x(self):
+        '''x getter'''
+        return self.__x
+
     @x.setter
     def x(self, value):
         '''x setter'''
         self.setter_validation('x', value, False)
         self.__x = value
+
+    @property
+    def y(self):
+        '''y getter'''
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -74,7 +73,7 @@ class Rectangle(Base):
 
     def display(self):
         '''display rectangle'''
-        rect = '\n' * self.y + (' ' * self.x + '#' * self.width + '\n')\
+        rect = '\n' * self.y + (' ' * self.x + '#' * self.width + '\n') \
                * self.height
         print(rect, end='')
 
@@ -110,3 +109,8 @@ class Rectangle(Base):
         '''Rectangle instance to dictionary'''
         return {"x": self.__x, "width": self.__width, "id": self.id,
                 "height": self.__height, "y": self.__y}
+
+    def to_dictionary_rearrange(self):
+        '''Rectangle instance to dictionary'''
+        return {"y": self.__y, "x": self.__x, "width": self.__width,
+                "id": self.id, "height": self.__height}
