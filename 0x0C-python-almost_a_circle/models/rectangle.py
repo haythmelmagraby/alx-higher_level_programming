@@ -4,15 +4,15 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    '''Content of Rectangle Class'''
+    '''Content of Rectangle Sub Class'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
         '''the Constructor'''
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -74,7 +74,7 @@ class Rectangle(Base):
 
     def display(self):
         '''display rectangle'''
-        rect = '\n' * self.y + (' ' * self.x + '#' * self.width + '\n') \
+        rect = '\n' * self.y + (' ' * self.x + '#' * self.width + '\n')\
                * self.height
         print(rect, end='')
 
